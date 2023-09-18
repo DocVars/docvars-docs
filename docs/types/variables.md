@@ -363,6 +363,8 @@ File is left unselect.
 > **Output:**   
 All content in the referenced Google Doc ID is imported and injected into the template.
 
+---
+
 ## Images
 
 #### Syntax
@@ -401,6 +403,7 @@ User selects an image from drive or uploaded from computer.
 > **Output:**   
 Insert image into document with a constrained width of 200 and height of 100.
 
+---
 
 ## References
 
@@ -441,36 +444,3 @@ ${Data Sheet::reference::~1QJ5GmGdezPIsWIcAN-Glh7bDgQo6czPuu751UerhCpk,Sheet1!A1
 Default value is selected from sheet and reference, and user makes no changes.    
 > **Output:**   
 Data from sheet and cell is imported into outputed document.
-
-## Integrations
-
-### CRMs
-
-Doc Variables integrates with Salesforce and Hubspot CRM platforms. This feature enables data import directly from contacts or companies within your CRM.
-
-Syntax:
-
-- `${Name::hubspot-account}`
-- `${Name::hubspot-contact}`
-- `${Name::salesforce-company}`
-- `${Name::salesforce-contact}`
-
-Examples:  
-- `${Firstname::hubspot-account}`
-- `${Lastname::salesforce-contact::~Albert Einstein}`
-
-**Default Values:**  
-Names or IDs of the contact (or account) can be used as defaults. This requires an exact match.
-
-
-### Chat GPT
-
-Doc Variables is also integrated with the popular AI ChatGPT.
-
-Syntax:
-
-- `${Variable Name::gpt}`
-
-Examples:
-
-- `${Agenda::gpt::~Write an agenda for an intro call with a new client}`
