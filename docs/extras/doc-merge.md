@@ -12,13 +12,15 @@ Select the `Doc Merge` option from the Doc Variables menu by choosing `Extras` &
 
 #### Select a Source
 Select `Create` or `Select` to either create a new Google Sheet or Select an existing one.      
+
 The Google Sheet should include column names matching the variable names defined in your document.
-##### Document Definitions
+
+> ##### Example Document Definitions
 ```
 ${Company Name} has a contract date of ${Contract Date}.        
 Please email them at ${Contact Email}
 ```
-##### Example Data Source
+> ##### Example Data Source
 > | Company Name      | Contract Date        | Contact Email                                         |
 |------------|----------------|-----------------------------------------------------|
 | Apple      | 1/1/2018           | info@apple.com                                  |
