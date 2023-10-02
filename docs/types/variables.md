@@ -78,6 +78,7 @@ An option is required for this field type.
 `uppercase`
 `lowercase`
 `capitalize`
+`titlecase`
 
 #### Examples
 
@@ -111,6 +112,15 @@ An option is required for this field type.
 > **Ouput:**   
       *Transformed variable*
 
+##### Titlecase Transform
+> **Definition:**
+  ```plaintext
+  ${TransformCase::transform::titlecase}
+  ```
+> **Input:**   
+      TransformCase: `transformed variable`   
+> **Ouput:**   
+      *Transformed Variable*
 
 ---
 
@@ -122,6 +132,11 @@ The Text Area is designed for capturing longer input fields for text variables.
 
 ```plaintext
 ${[VARIABLE_NAME]::textarea}
+```
+
+#### Alternative
+```
+${[VARIABLE_NAME]::ta}
 ```
 
 #### Examples
@@ -184,6 +199,12 @@ Last Name: `McCabe`
 ```
 ${[VARIABLE_NAME]::date::[DATE_FORMAT]}
 ```
+
+#### Alternative
+```
+${[VARIABLE_NAME]::d::[DATE_FORMAT]}
+```
+
 #### Date Formats
 
 | Input      | Example        | Description                                         |
@@ -234,6 +255,13 @@ Generates a list of options the user can select from in the form of a dropdown f
 ${[VARIABLE_NAME]::options::"[VALUE_1]","[VALUE_2]",...}
 ```
 
+#### Alternatives
+```
+${[VARIABLE_NAME]::dropdown::"[VALUE_1]","[VALUE_2]",...}
+${[VARIABLE_NAME]::o::"[VALUE_1]","[VALUE_2]",...}
+${[VARIABLE_NAME]::dd::"[VALUE_1]","[VALUE_2]",...}
+```
+
 #### Examples
 ##### Standard
 > **Definition:**
@@ -265,6 +293,12 @@ In this variation of the standard options type, you can change the label of the 
 ${[VARIABLE_NAME]::options-values::"[LABEL_1]":"[VALUE_1]","[LABEL_2]":"[VALUE_2]",...}
 ```
 
+#### Alternatives
+```
+${[VARIABLE_NAME]::ov::"[LABEL_1]":"[VALUE_1]","[LABEL_2]":"[VALUE_2]",...}
+${[VARIABLE_NAME]::ddv::"[LABEL_1]":"[VALUE_1]","[LABEL_2]":"[VALUE_2]",...}
+```
+
 #### Example
 
 > **Definition:**
@@ -281,16 +315,28 @@ User selects `Seven`
 
 You can create lists of content by using the list variable type.
 
-#### Syntax
+#### Default Syntax (Bullets)
 ```
 ${[VARIABLE_NAME]::list::"[LIST_ITEM_1]","[LIST_ITEM_2]",...}
 ```
 ```
+${[VARIABLE_NAME]::l::"[LIST_ITEM_1]","[LIST_ITEM_2]",...}
+```
+#### Paragraph List
+```
 ${[VARIABLE_NAME]::list-paragraph::"[LIST_ITEM_1]","[LIST_ITEM_2]",...}
 ```
 ```
+${[VARIABLE_NAME]::lp::"[LIST_ITEM_1]","[LIST_ITEM_2]",...}
+```
+#### Paragraph Numbered
+```
 ${[VARIABLE_NAME]::list-numbered::"[LIST_ITEM_1]","[LIST_ITEM_2]",...}
 ```
+```
+${[VARIABLE_NAME]::ln::"[LIST_ITEM_1]","[LIST_ITEM_2]",...}
+```
+
 
 #### Example
 
@@ -340,6 +386,10 @@ ${[VARIABLE_NAME]::file}
 ```
 ${[VARIABLE_NAME]::file::~[DOCUMENT_ID]}
 ```
+#### Alternative
+```
+${[VARIABLE_NAME]::f}
+```
 
 #### Examples
 
@@ -370,6 +420,10 @@ All content in the referenced Google Doc ID is imported and injected into the te
 #### Syntax
 ```
 ${[VARIABLE_NAME]::image::[IMAGE_OPTIONS]}
+```
+#### Alternative
+```
+${[VARIABLE_NAME]::i}
 ```
 
 #### Examples
@@ -417,7 +471,16 @@ ${Reference Name::reference}
 ${Reference Name::reference::~[SHEET_ID],[CELL_SELECTION]}
 ```
 ```
-${Reference Name::hidden-reference}
+${Reference Name::reference-hidden}
+```
+
+#### Alternatives
+
+```
+${Reference Name::r}
+```
+```
+${Reference Name::rh}
 ```
 
 :::note
