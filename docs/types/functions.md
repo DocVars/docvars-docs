@@ -7,10 +7,19 @@ Functions are elements within your document that are generated based on the valu
 #{ {[VARIABLE_NAME_1]} [OPERATOR] {[VARIABLE_NAME_2]}}
 ```
 ```
+#{ {[VARIABLE_NAME_1]} {[VARIABLE_NAME_2]} }
+```
+
+##### Formatting
+
+```
 #{ {[VARIABLE_NAME_1]} [OPERATOR] {[VARIABLE_NAME_2]}::format::[OPTIONS] }
 ```
+
+##### Reference
+
 ```
-#{ {[VARIABLE_NAME_1]} {[VARIABLE_NAME_2]} }
+#{ [REFERENCE_NAME]::reference::[SHEETID],[CELL_SELECTION] }
 ```
 
 
@@ -58,3 +67,15 @@ First Name: `Jesse`
 Last Name: `McCabe`        
 > **Output:**   
 *Jesse McCabe*
+
+##### Google Sheets Reference
+
+> **Definition:**
+```
+${Sheet URL::hidden}
+#{CellA1::reference::{Sheet URL},Sheet1!A1}
+```
+> **Input:**        
+Sheet URL: `https://docs.google.com/spreadsheets/d/1lLG_TkGxZ6Ao9fOtfLNz2LbYjHNA-igP99A7biIJi4I/edit?show_add_on=M8KKXw4AvutWpwvT5N1qcfMh00DPSBbB3#gid=0`        
+> **Output:**       
+*Hi*
