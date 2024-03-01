@@ -16,7 +16,8 @@ Logics allow you to hide or show content based on the value of other variables.
 > **Definition:**
 ```
 ${Company Name::hidden}
-?{{Company Name}(=)Doc Variables::Write out some Doc Variable content!}
+?{{Company Name}(=)Doc Variables::If equal, write out some Doc Variable content!}
+?{{Company Name}(!)Doc Variables::If not equal, write out some Doc Variable content!}
 ```
 > **Input:**        
 Company Name: `Doc Variables`       
@@ -29,6 +30,7 @@ Company Name: `Doc Variables`
 ${Contact Name::hidden}
 ${CEO Name::hidden}
 ?{{Contact Name}(=){CEO Name}::Better make this good.}
+?{{Contact Name}(!){CEO Name}::Doesn't matter.}
 ```
 > **Input:**        
 Contact Name: `Tim Cook`        
