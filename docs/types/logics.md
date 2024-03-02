@@ -9,6 +9,16 @@ Logics allow you to hide or show content based on the value of other variables.
 ```
 ?{{[VARIABLE_NAME_1]}([OPERATOR]){[VARIABLE_NAME_2]}::[OUTPUT_IF_MATCH]}
 ```
+```
+?{{[VARIABLE_NAME_1]}([OPERATOR])[MATCHING_TEXT]::file::[URL_TO_IMPORT]}
+```
+#### Operators
+`=` - (equal)
+
+`!` - (not equal)
+
+#### Options
+`file`
 
 #### Examples
 
@@ -34,6 +44,17 @@ ${CEO Name::hidden}
 ```
 > **Input:**        
 Contact Name: `Tim Cook`        
-CEO Name: `Time Cook`     
+CEO Name: `Elon Musk`     
 > **Output:**       
-*Better make this good.*  
+*Doesn't matter.*  
+
+##### Import File
+> **Definition:**
+```
+?{{Contact Name}(=){CEO Name}::file::https://docs.google.com/document/d/1Ano...0/edit}
+```
+> **Input:**        
+Contact Name: `Tim Cook`        
+CEO Name: `Tim Cook`     
+> **Output:**       
+*FILE CONTENT*  
