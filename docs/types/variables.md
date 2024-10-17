@@ -163,6 +163,43 @@ ${TxtArea2::textarea::~Default Text}
   *Default Text*
 
 ---
+## Number
+
+The `number` field type allows you to create input fields that only accept numeric values.
+
+#### Syntax
+
+```
+${[VARIABLE_NAME]::number}
+```
+
+#### Example
+
+> **Definition:**
+```
+${Annual Revenue::number}
+```
+
+> **Usage in Logic:**
+```
+?{{Annual Revenue}(>=)1000000::This company is a million-dollar company!}
+?{{Annual Revenue}(<)1000000::This company is not yet a million-dollar company.}
+```
+Input:
+
+Annual Revenue: 1500000
+Output:
+
+This company is a million-dollar company!
+
+
+> **Input:**    
+Annual Revenue: `500000`
+Output:
+
+This company is not yet a million-dollar company!
+
+---
 
 ## Hidden
 
