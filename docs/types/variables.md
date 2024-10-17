@@ -185,19 +185,17 @@ ${Annual Revenue::number}
 ?{{Annual Revenue}(>=)1000000::This company is a million-dollar company!}
 ?{{Annual Revenue}(<)1000000::This company is not yet a million-dollar company.}
 ```
-Input:
 
-Annual Revenue: 1500000
-Output:
-
+> **Input:**    
+Annual Revenue: `1500000`
+> **Output**:
 This company is a million-dollar company!
 
 
 > **Input:**    
 Annual Revenue: `500000`
-Output:
-
-This company is not yet a million-dollar company!
+> **Output**:
+*This company is not yet a million-dollar company!*
 
 ---
 
